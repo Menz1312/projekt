@@ -3,13 +3,21 @@ import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from '
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 
-export class NavMenu extends Component {
+// Definiujemy interfejs dla Stanu
+interface NavMenuState {
+  collapsed: boolean;
+}
+
+// Component<Props, State> - pierwszy argument to pusty obiekt (brak propsów), drugi to nasz stan
+export class NavMenu extends Component<{}, NavMenuState> {
   static displayName = NavMenu.name;
 
-  constructor (props) {
+  constructor (props: {}) {
     super(props);
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
+    
+    // Inicjalizacja stanu
     this.state = {
       collapsed: true
     };
@@ -33,10 +41,7 @@ export class NavMenu extends Component {
                 <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
+                <NavLink tag={Link} className="text-dark" to="/addresses">Adresy</NavLink>
               </NavItem>
             </ul>
           </Collapse>

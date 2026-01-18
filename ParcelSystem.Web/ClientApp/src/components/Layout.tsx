@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import { Container } from 'reactstrap';
 import { NavMenu } from './NavMenu';
 
-export class Layout extends Component {
+// Definiujemy interfejs dla propsów, mówiąc, że mogą zawierać children
+interface LayoutProps {
+  children?: ReactNode;
+}
+
+export class Layout extends Component<LayoutProps> {
   static displayName = Layout.name;
 
   render() {
