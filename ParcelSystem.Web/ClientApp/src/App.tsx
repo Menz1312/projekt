@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <Layout>
         <Routes>
-          {AppRoutes.map((route, index) => {
+          {AppRoutes.map((route: any, index: number) => {
             const { element, ...rest } = route;
             return <Route key={index} {...rest} element={element} />;
           })}
