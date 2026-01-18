@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { ParcelProvider } from './context/ParcelContext';
 
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
@@ -12,7 +13,9 @@ const root = createRoot(rootElement!); // Wykrzyknik (!) mówi TS, że element n
 
 root.render(
   <BrowserRouter basename={baseUrl || ''}>
-    <App />
+    <ParcelProvider>  {/* <--- TU DODAJ START */}
+      <App />
+    </ParcelProvider> {/* <--- TU DODAJ KONIEC */}
   </BrowserRouter>
 );
 

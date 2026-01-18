@@ -12,7 +12,6 @@ namespace ParcelSystem.Services.ViewModels
         public DateTime CreatedAt { get; set; }
 
         public int AddressId { get; set; }
-        // Opcjonalnie: możemy tu dodać nazwę miasta/ulicy, żeby łatwiej wyświetlić to na liście
         public string? DeliveryAddressInfo { get; set; } 
     }
 }

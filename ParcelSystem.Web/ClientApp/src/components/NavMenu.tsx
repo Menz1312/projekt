@@ -12,18 +12,18 @@ interface NavMenuState {
 export class NavMenu extends Component<{}, NavMenuState> {
   static displayName = NavMenu.name;
 
-  constructor (props: {}) {
+  constructor(props: {}) {
     super(props);
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
-    
+
     // Inicjalizacja stanu
     this.state = {
       collapsed: true
     };
   }
 
-  toggleNavbar () {
+  toggleNavbar() {
     this.setState({
       collapsed: !this.state.collapsed
     });
@@ -42,6 +42,9 @@ export class NavMenu extends Component<{}, NavMenuState> {
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} className="text-dark" to="/addresses">Adresy</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} className="text-dark" to="/parcels">Przesyłki</NavLink>
               </NavItem>
             </ul>
           </Collapse>
